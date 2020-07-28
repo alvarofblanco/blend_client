@@ -5,6 +5,40 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('HelveticaNeue.ttc');
+  font-style: normal;
+  font-weight: 700;
+}
+
 nav {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-left: 2em;
+}
+.post {
+  position: relative;
+}
+
+.post-title {
+  position: absolute;
+  bottom: 0.5em;
+  padding-bottom: 0.1em;
+  font-size: 80pt;
   font-family: 'Montserrat';
+  color: "#b98051";
+}
+.post-body {
+  position: absolute;
+  padding-left: 2.5%;
+  margin-right: 500px;
+  bottom: 0px;
+  font-family: 'HelveticaNeue';
+}
+
+.container {
+  position: relative;
+  text-align: center;
 }
