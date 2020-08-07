@@ -11,9 +11,14 @@
   font-style: normal;
   font-weight: 700;
 }
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url('HelveticaNeueCondensedBold.ttf');
+  font-style: normal;
+}
 
 nav {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "HelveticaCondensedBold"; 
   font-weight: bold;
   font-size: 1.5em;
   margin-left: 2em;

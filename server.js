@@ -7,6 +7,7 @@ const dotenv = require('dotenv').config();
 // const routes = require('./src/routes/index');
 
 const PORT = process.env.PORT || 3000;
+const LOCAL_IP = process.env.LOCAL_IP || '192.168.100.15';
 
 const app = express();
 
@@ -30,6 +31,6 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, LOCAL_IP, () => {
   debug(`Listening on port ${PORT}`);
 });
