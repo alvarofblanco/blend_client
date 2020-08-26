@@ -47,3 +47,7 @@ nav {
   position: relative;
   text-align: center;
 }
+
+.nav-item:hover {
+  text-decoration: underline;
+}

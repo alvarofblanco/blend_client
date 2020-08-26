@@ -17,7 +17,7 @@ app.use(express.static('public'));
 // app.use(express.static(__dirname, '/public'));
 
 // view engine
-app.set('views', 'src/views');
+app.set('views', 'public/views');
 app.set('view engine', 'ejs');
 
 // App routes
