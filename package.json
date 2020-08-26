@@ -4,7 +4,7 @@
   "description": "Blend client",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "DEBUG=app,app:* node server.js",
     "dev": "DEBUG=app,app:* nodemon server.js"
   },
   "author": "alvarofblanco.dev@gmail.com",

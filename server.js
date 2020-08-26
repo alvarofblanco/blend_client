@@ -1,13 +1,11 @@
 const express = require('express');
 const morgan = require('morgan');
 const debug = require('debug')('app:server');
-// const path = require('path');
-// eslint-disable-next-line no-unused-vars
-const dotenv = require('dotenv').config();
-// const routes = require('./src/routes/index');
+require('dotenv').config();
+
+const indexRouter = require('./src/routes/indexRouter');
 
 const PORT = process.env.PORT || 3000;
-const LOCAL_IP = process.env.LOCAL_IP || '192.168.100.15';
 
 const app = express();
 
@@ -23,14 +21,8 @@ app.set('views', 'src/views');
 app.set('view engine', 'ejs');
 
 // App routes
-// app.use('/', routes);
+app.use('/', indexRouter);
 
-app.get('/', (req, res) => {
-  res.render('index', {
-    title: 'Blend Blog',
-  });
-});
-
-app.listen(PORT, LOCAL_IP, () => {
+app.listen(PORT, () => {
   debug(`Listening on port ${PORT}`);
 });
