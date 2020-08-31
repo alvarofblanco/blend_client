@@ -51,3 +51,16 @@ nav {
 .nav-item:hover {
   text-decoration: underline;
 }
+
+@media all and (min-width: 992px) {
+  .navbar .has-megamenu {
+    position: static !important;
+  }
+
+  .megamenu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+  }
+}
