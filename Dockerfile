@@ -1,4 +1,4 @@
-FROM node:14.3-alpine
+FROM node:12.18.3
 
 # App work directory
 WORKDIR /usr/src/client
@@ -11,5 +11,5 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 3000
+EXPOSE 3333
 CMD ["npm", "run", "dev"]
