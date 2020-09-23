@@ -1,17 +1,17 @@
 const getPostMusica = (req, res) => {
-  res.send('musica');
+  res.render('pages/category', { title: 'musica' });
 };
 
 const getPostCine = (req, res) => {
-  res.send('cine');
+  res.render('pages/category', { title: 'cine' });
 };
 
 const getPostGastronomia = (req, res) => {
-  res.send('gastronomia');
+  res.render('pages/category', { title: 'gastronomia' });
 };
 
 const getPostCultura = (req, res) => {
-  res.send('cultura');
+  res.render('pages/category', { title: 'cultura' });
 };
 
 const categoryController = {};
