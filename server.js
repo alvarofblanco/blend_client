@@ -4,6 +4,7 @@ const debug = require('debug')('app:server');
 require('dotenv').config();
 
 const indexRouter = require('./src/routes/indexRouter');
+const postRouter = require('./src/routes/postRouter');
 
 const PORT = process.env.PORT || 3333;
 
@@ -22,6 +23,7 @@ app.set('view engine', 'ejs');
 
 // App routes
 app.use('/', indexRouter);
+app.use('/posts', postRouter);
 
 app.listen(PORT, () => {
   debug(`Listening on port ${PORT}`);
