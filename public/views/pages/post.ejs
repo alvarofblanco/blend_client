@@ -25,23 +25,14 @@
   <%- include('../partials/nav') %>
 
   <body>
-    <div class="row" style="margin-left: 100px; margin-right: 100px;">
-      <% for(let i = 0; i<7; i++) { %>
-      <div class="mb-4 col-lg-3 col-md-4 col-sm-6">
-        <div class="card mb-3">
-          <a href="/post/100">
-            <img class="card-img-top" src="https://picsum.photos/50" alt="Lorem" style="margin: auto;">
-            <div class="card-body">
-              <h5 class="card-title"><%= title %></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-            </div>
-        </div>
-        </a>
-      </div>
-      <% } %>
-
-    </div>
+    <div class="post">
+      <img src="/images/concert.jpg" alt="Concierto" style="width: 1440px; height: 450px;">
+      <div style="color: #c37760;" class="post-title ml-5">Post Id <%= id %></div>
+      <div style="color: white;" class="post-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        elit libero, viverra
+        et est a, mattis feugiat ex. Morbi in purus a libero gravida tristique. Duis mi arcu, ultricies rutrum sapien
+        non, tincidunt hendrerit felis. Aenean consectetur ullamcorper sagittis. Phasellus at vehicula turpis. Proin et
+        ultrices ex, quis pharetra augue. Pellentesque id mi sem. Vestibulum</div>
     </div>
 
   </body>

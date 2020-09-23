@@ -1,5 +1,5 @@
 const getOnePost = async (req, res) => {
-  res.json({ message: 'ok' });
+  res.render('pages/post', { title: 'Titulo del Post', id: req.params.postId });
 };
 
 const postController = {};

@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 
 // App routes
 app.use('/', indexRouter);
-app.use('/posts', postRouter);
+app.use('/post', postRouter);
 app.use('/category', categoryRouter);
 
 app.listen(PORT, () => {
