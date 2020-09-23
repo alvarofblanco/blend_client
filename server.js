@@ -1,7 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const debug = require('debug')('app:server');
-require('dotenv').config();
+const categoryRouter = require('./src/routes/category');
 
 const indexRouter = require('./src/routes/indexRouter');
 const postRouter = require('./src/routes/postRouter');
@@ -24,6 +25,7 @@ app.set('view engine', 'ejs');
 // App routes
 app.use('/', indexRouter);
 app.use('/posts', postRouter);
+app.use('/category', categoryRouter);
 
 app.listen(PORT, () => {
   debug(`Listening on port ${PORT}`);
