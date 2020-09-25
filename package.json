@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "DEBUG=app,app:* node server.js",
-    "dev": "DEBUG=app,app:* nodemon server.js"
+    "dev": "DEBUG=app,app:* nodemon server.js",
+    "dev-win": "SET DEBUG=app,app:* && nodemon server.js"
   },
   "author": "alvarofblanco.dev@gmail.com",
   "license": "ISC",
