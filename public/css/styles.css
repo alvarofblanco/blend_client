@@ -17,6 +17,12 @@
   font-style: normal;
 }
 
+
+body {
+  min-height: 75rem;
+  padding-top: 12rem;
+}
+
 nav {
   font-family: "HelveticaCondensedBold"; 
   font-weight: bold;
@@ -26,7 +32,21 @@ nav {
 .post {
   position: relative;
 }
-
+.row {
+  width: 100%;
+  margin-left: 0px;
+}
+.col-md-6{
+  border: 1px solid black;
+  margin-top: 2em;
+}
+.col-md-6 h1{
+  font-family: Monserrat;
+}
+.main {
+  margin: auto !important;
+  padding: 10px;
+}
 .post-title {
   position: absolute;
   bottom: 0.5em;

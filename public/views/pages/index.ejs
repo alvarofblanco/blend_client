@@ -24,20 +24,61 @@
 <body>
   <%- include('../partials/nav') %>
 
-  <body>
-    <div class="post">
-      <img src="/images/concert.jpg" alt="Concierto" style="width: 1440px; height: 450px;">
-      <div style="color: #c37760;" class="post-title ml-5">Titulo de la Nota</div>
-      <div style="color: white;" class="post-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        elit libero, viverra
-        et est a, mattis feugiat ex. Morbi in purus a libero gravida tristique. Duis mi arcu, ultricies rutrum sapien
-        non, tincidunt hendrerit felis. Aenean consectetur ullamcorper sagittis. Phasellus at vehicula turpis. Proin et
-        ultrices ex, quis pharetra augue. Pellentesque id mi sem. Vestibulum</div>
+    <div class="carousel-content">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://picsum.photos/1024/300" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Titulo de la nota</h2>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/1024/300" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/1024/300" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
 
-  </body>
-
-
+    <main class="main">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates ipsam consequuntur.</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea debitis architecto perferendis ratione quasi facere! Neque ad soluta dolorum inventore enim sed nemo ex accusantium atque aliquid, cum laboriosam odio aut amet vel error, voluptatibus consequuntur magnam molestias. Consequatur, quidem provident ipsa repellat, nemo soluta inventore facere sequi voluptates sunt quibusdam dolores similique. Voluptas voluptatum atque nemo exercitationem totam perferendis odit qui repudiandae, cupiditate eos tempora minima nulla accusamus eum enim harum cumque a amet aliquam. Sapiente earum voluptas odit distinctio praesentium officiis consectetur ullam? Necessitatibus quidem suscipit nihil porro eaque reprehenderit illum quasi beatae fugiat? Esse illum natus recusandae.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut natus, voluptas nisi modi pariatur assumenda laborum! Totam dolor, aperiam quia explicabo vitae quisquam eum rem, obcaecati beatae eius, nesciunt omnis modi cum nisi eveniet ea suscipit amet. Corporis suscipit quibusdam, similique nesciunt perferendis fugiat natus ipsam fuga id illo eaque minus magnam reiciendis aliquam omnis laborum deserunt neque vitae, doloribus sapiente error cumque perspiciatis maiores? Voluptatem, quia sequi soluta sed aliquid est laudantium error! Sint officiis expedita tenetur adipisci voluptatum molestiae error aliquam et magni quibusdam nobis ipsa repellendus minus illo neque incidunt, fugit recusandae quis. Iste corrupti reprehenderit voluptatem.</p>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+    </main>
+    <!--Footer-->
+    <%-include('../partials/footer')%>
+    
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
