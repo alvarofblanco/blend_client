@@ -25,25 +25,27 @@
   <%- include('../partials/nav') %>
 
   <body>
-    <div class="row" style="margin-left: 100px; margin-right: 100px;">
-      <% for(let i = 0; i<7; i++) { %>
-      <div class="mb-4 col-lg-3 col-md-4 col-sm-6">
-        <div class="card mb-3">
-          <a href="/post/100">
-            <img class="card-img-top" src="https://picsum.photos/50" alt="Lorem" style="margin: auto;">
-            <div class="card-body">
-              <h5 class="card-title"><%= title %></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
+    <main class="main">
+      <div class="row">
+        <% for(let i = 0; i<7; i++) { %>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card ">
+              <a href="/post/100">
+                <img class="card-img-top" src="https://picsum.photos/350/200" alt="Lorem" style="margin: auto;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= title %></h5>
+                    <p class="card-text">ural lead-in to additional
+                      content. This content is a little bit longer.
+                    </p>
+                </div>
+              </a>
             </div>
         </div>
-        </a>
+        <% } %>
       </div>
-      <% } %>
-
-    </div>
-    </div>
-
+    </main>
+  
+    <%- include('../partials/footer')%>
   </body>
 
 
