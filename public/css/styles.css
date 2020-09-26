@@ -19,9 +19,11 @@
 
 
 body {
-  padding-top: 12rem;
+  padding-top: 10rem;
 }
-
+.carousel-caption{
+  text-align: left !important;
+}
 nav {
   font-family: "HelveticaCondensedBold"; 
   font-weight: bold;
