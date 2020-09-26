@@ -21,6 +21,11 @@
 body {
   padding-top: 10rem;
 }
+
+.card {
+  margin-bottom: 2.25rem;
+}
+
 .carousel-caption{
   text-align: left !important;
 }

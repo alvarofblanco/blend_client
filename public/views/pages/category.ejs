@@ -17,7 +17,8 @@
   <link href="/fontawesome-free-5.14.0-web/css/fontawesome.css" rel="stylesheet">
   <link href="/fontawesome-free-5.14.0-web/css/brands.css" rel="stylesheet">
   <link href="/fontawesome-free-5.14.0-web/css/solid.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
   <title><%=title%></title>
 </head>
@@ -30,27 +31,27 @@
       <div class="row">
         <% for(let i = 0; i<7; i++) { %>
         <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card mb-4">
-              <a href="/post/100">
-                <div class="contenedor">
-                  <img class="card-img-top" src="https://picsum.photos/350/200" alt="Lorem" style="margin: auto;">
-                  <div class="texto-encima">
-                      <h4 class="text-warning">Titulo de la nota</h4>
-                  </div>
+          <div class="card">
+            <a href="/post/100">
+              <div class="contenedor">
+                <img class="card-img-top" src="https://picsum.photos/350/200" alt="Lorem" style="margin: auto;">
+                <div class="texto-encima">
+                  <h4 class="text-warning">Titulo de la nota</h4>
                 </div>
-                  <div class="card-body">
-                    <h5 class="card-title text-dark"><%= title %></h5>
-                    <p class="card-text text-dark">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, molestias.
-                    </p>
-                </div>
-              </a>
-            </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-dark"><%= title %></h5>
+                <p class="card-text text-dark">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, molestias.
+                </p>
+              </div>
+            </a>
+          </div>
         </div>
         <% } %>
       </div>
     </main>
-  
+
     <%- include('../partials/footer')%>
   </body>
 
