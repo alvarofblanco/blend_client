@@ -48,6 +48,29 @@ nav {
   margin: auto !important;
   padding: 10px;
 }
+
+.contenedor{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+ 
+.texto-encima{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-family: 'Montserrat';
+
+}
+
+.card-body {
+  padding: 10px;
+}
+.card a{
+  text-decoration: none;
+}
+
 .post-title {
   position: absolute;
   bottom: 0.5em;
