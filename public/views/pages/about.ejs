@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Font awesome -->
+  <link href="/fontawesome-free-5.14.0-web/css/fontawesome.css" rel="stylesheet">
+  <link href="/fontawesome-free-5.14.0-web/css/brands.css" rel="stylesheet">
+  <link href="/fontawesome-free-5.14.0-web/css/solid.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <title><%=title%></title>
+</head>
+
+<body>
+  <%- include('../partials/nav') %>
+  <!--Carousel-->
+  <div class="carousel-content">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/images/about.jpg" style="max-height: px;" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1 class="display-3 text-warning">sobre nosotras</h1>
+            <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nemo libero laborum!</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Contenido-->
+  <main class="main">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates ipsam consequuntur.</h1>
+        <p>Identidad: La palabra ‘’blend’’ se define como mezcla o combinación; y es también un
+          término utilizado en el mundo del vino en referencia a un ensamblaje. Fusionamos el arte
+          en todas sus formas, la gastronomía en todo su conjunto; es decir, la cultura en todas sus
+          expresiones. Y así nace nuestro « Blend », una plataforma y espacio para contar historias y
+          experiencias. Un medio alternativo o guía de todo esto que disfrutamos y nos apasiona.
+          Buscamos narrar, explorar, expresar, informar y sobre todo compartir. Visibilizar las
+          historias, los referentes y elementos de estos mundos y espacios desde una perspectiva más
+          humana, global y actual. Somos cultura. Somos Cultura Blend.</p>
+        <p>Somos una fusión de todo; de los elementos que nos inspiran, las experiencias que nos
+          marcaron y por sobre todo somos producto y fusión de la pasión hacia todo aquello que
+          amamos, lo que creemos y lo que nos define.</p>
+        <p>Nos mueven el arte, la gastronomía. Nos mueve la cultura en toda su extensión y en todas
+          sus expresiones. Desde la música, el cine, las artes visuales, la literatura, las artes escénicas,
+          la fotografía, la arquitectura; hasta la gastronomía en todo su conjunto e historia. Todo esto
+          nos configura, habla de quienes somos. Nos potencia y nos hace latir al ritmo de cada
+          tiempo. Radiografían al pasado, al presente y hablarán del futuro para definir así nuestra
+          identidad de una cultura diversa.</p>
+        <p>Desde ahora queremos hablar de todo esto. Ser narradoras, storytellers, cronistas de
+          nuestros tiempos, los que pasaron y los que vendrán. Buscamos hablar desde la
+          independencia del pensamiento, movidas por el pulso de los ritmos que atraviesan el
+          mundo; asombradas por las expresiones que hablan de la sensibilidad de un artista en
+          cualquier punto del planeta; conmovidas por las sensaciones que despierta una experiencia
+          culinaria, conquistadas por los aromas y sabores en una copa o en un plato.</p>
+        <p>Como humanos somos un ensamblaje de factores que llevó a que cada uno sea quien es
+          hoy. Sabemos que en esa creación de nuestras vidas, la cultura nos identifica y representa.
+          Que la cultura en cuanto al arte y la gastronomía tienen razón de ser. Arte y gastronomía
+          que existen en la vida desde los orígenes de la existencia del ser humano como evidencia de
+          nuestra evolución e historia.</p>
+        <p>
+          El arte y la gastronomía nos apasionan y estamos convencidas de sus incidencias en las
+          personas y en todo lo que despiertan y generan en ellas. Que el impacto de ambas puede
+          hacer que este sea un lugar mejor donde habitar. </p>
+        <p> Queremos hablar, sobre todo, desde la sinceridad. Desde el verdadero compromiso que nos
+          lleva a crear este medio de expresión. Un compromiso con todo y con todos. Con las
+          diversas formas de expresión. Queremos llegar al alma de todas las cosas. Será un desafío,
+          pero lo tomamos por amor. Porque si existe un destino, este es el nuestro.</p>
+        <h1 class="display-5 text-warning titleInMiddle">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos
+          quidem qui pariatur consectetur odit ea sequi praesentium aliquid iure blanditiis."</h1>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </main>
+  <!--Footer-->
+  <%-include('../partials/footer')%>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

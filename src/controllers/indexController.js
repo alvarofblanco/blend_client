@@ -18,7 +18,16 @@ const getIndex = async (req, res) => {
   }
 };
 
+const getAbout = async (req, res) => {
+  try {
+    return res.render('pages/about', { title: 'Blend Blol' })
+  } catch (error) {
+    res.json({ error: error.message })
+  }
+}
+
 const indexController = {};
 indexController.getIndex = getIndex;
+indexController.getAbout = getAbout;
 
 module.exports = indexController;
