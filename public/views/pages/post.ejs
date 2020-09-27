@@ -17,26 +17,57 @@
   <link href="/fontawesome-free-5.14.0-web/css/fontawesome.css" rel="stylesheet">
   <link href="/fontawesome-free-5.14.0-web/css/brands.css" rel="stylesheet">
   <link href="/fontawesome-free-5.14.0-web/css/solid.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <title><%=title%></title>
 </head>
 
 <body>
   <%- include('../partials/nav') %>
-
-  <body>
-    <div class="post">
-      <img src="/images/concert.jpg" alt="Concierto" style="width: 1440px; height: 450px;">
-      <div style="color: #c37760;" class="post-title ml-5">Post Id <%= id %></div>
-      <div style="color: white;" class="post-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        elit libero, viverra
-        et est a, mattis feugiat ex. Morbi in purus a libero gravida tristique. Duis mi arcu, ultricies rutrum sapien
-        non, tincidunt hendrerit felis. Aenean consectetur ullamcorper sagittis. Phasellus at vehicula turpis. Proin et
-        ultrices ex, quis pharetra augue. Pellentesque id mi sem. Vestibulum</div>
+  <!--Carousel-->
+  <div class="carousel-content">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/images/post_4.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1 class="display-3 text-warning">Titulo de La Nota</h1>
+            <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nemo libero laborum!</strong>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-
-  </body>
-
+  </div>
+  <!--Contenido-->
+  <main class="main">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates ipsam consequuntur.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea debitis architecto perferendis ratione quasi
+          facere! Neque ad soluta dolorum inventore enim sed nemo ex accusantium atque aliquid, cum laboriosam odio aut
+          amet vel error, voluptatibus consequuntur magnam molestias. Consequatur, quidem provident ipsa repellat, nemo
+          soluta inventore facere sequi voluptates sunt quibusdam dolores similique. Voluptas voluptatum atque nemo
+          exercitationem totam perferendis odit qui repudiandae, cupiditate eos tempora minima nulla accusamus eum enim
+          harum cumque a amet aliquam. Sapiente earum voluptas odit distinctio praesentium officiis consectetur ullam?
+          Necessitatibus quidem suscipit nihil porro eaque reprehenderit illum quasi beatae fugiat? Esse illum natus
+          recusandae.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut natus, voluptas nisi modi pariatur assumenda
+          laborum! Totam dolor, aperiam quia explicabo vitae quisquam eum rem, obcaecati beatae eius, nesciunt omnis
+          modi cum nisi eveniet ea suscipit amet. Corporis suscipit quibusdam, similique nesciunt perferendis fugiat
+          natus ipsam fuga id illo eaque minus magnam reiciendis aliquam omnis laborum deserunt neque vitae, doloribus
+          sapiente error cumque perspiciatis maiores? Voluptatem, quia sequi soluta sed aliquid est laudantium error!
+          Sint officiis expedita tenetur adipisci voluptatum molestiae error aliquam et magni quibusdam nobis ipsa
+          repellendus minus illo neque incidunt, fugit recusandae quis. Iste corrupti reprehenderit voluptatem.</p>
+        <h1 class="display-5 text-warning titleInMiddle">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos
+          quidem qui pariatur consectetur odit ea sequi praesentium aliquid iure blanditiis."</h1>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </main>
+  <!--Footer-->
+  <%-include('../partials/footer')%>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
