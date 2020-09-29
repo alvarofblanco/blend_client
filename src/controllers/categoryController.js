@@ -3,7 +3,7 @@ const getPostMusica = (req, res) => {
 };
 
 const getPostCine = (req, res) => {
-  res.render('pages/category', { title: 'cine' });
+  res.render('pages/category', { title: 'cine & series' });
 };
 
 const getPostGastronomia = (req, res) => {
