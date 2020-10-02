@@ -66,11 +66,11 @@ nav {
   bottom: 10px;
   left: 10px;
   font-family: 'Montserrat';
-
 }
 
 .card-body {
   padding: 10px;
+  font-family: &#169;;
 }
 .card a{
   text-decoration: none;
