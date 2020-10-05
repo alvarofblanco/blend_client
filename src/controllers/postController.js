@@ -22,7 +22,7 @@ const getOnePost = async (req, res) => {
     // cover
     const { cover } = response.data;
     debug(`url: ${cover.url}`);
-    // todo download image
+    // TODO download image
     coverUrl = new URL(`http://localhost:1337${cover.url}`);
   } catch (error) {
     res.send(error);
