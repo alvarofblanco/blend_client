@@ -30,6 +30,11 @@ body {
   text-align: left !important;
 }
 
+.imagen{
+  object-fit: cover !important;
+  height: 75vh;
+}
+
 nav {
   font-family: "HelveticaCondensedBold"; 
   font-weight: bold;
@@ -128,3 +133,4 @@ div .col-md-6{
     font-family: "HelveticaNeue";
   }
 }
+
