@@ -134,8 +134,12 @@ div .col-md-6{
   }
 }
 @media screen and (max-width: 760px) {
-  #carouselTitle{
-    font-size: 32px !important;
+  .d-md-block{
+    display: block !important;
   }
+  .display-5{
+    font-size: 24px;
+  }
+
 }
 

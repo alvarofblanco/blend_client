@@ -7,3 +7,11 @@
         font-size: 32px !important;
     }
 }
+main{
+    margin: auto;
+}
+.imgPost {
+    height: 75vh;
+    object-fit: cover !important;
+
+}
