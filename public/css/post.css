@@ -1,3 +1,9 @@
 #colmd6 {
     margin-top: 0px !important;
 }
+
+@media screen and (max-width: 760px) {
+    .display-4 {
+        font-size: 32px !important;
+    }
+}
