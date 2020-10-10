@@ -1,2 +1,4 @@
 node_modules
 public/images/cover/*
+public/images/card/*
+.env

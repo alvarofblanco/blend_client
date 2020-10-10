@@ -7,13 +7,13 @@ const axios = require('axios');
  * @param {String} url
  * @param {String} imageName
  */
-const downloadImage = async (url, imageName) => {
-  const path = Path.resolve(require.main.path, 'public', 'images', 'cover', imageName);
+const downloadImage = async (url, imageName, type) => {
+  const path = Path.resolve(require.main.path, 'public', 'images', type, imageName);
   const writter = fs.createWriteStream(path);
 
   const response = await axios.get(url, {
     proxy: {
-      host: 'blend_cms_dev',
+      host: 'blend_cms',
       port: 1337,
     },
     responseType: 'stream',

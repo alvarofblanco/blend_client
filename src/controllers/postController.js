@@ -7,13 +7,14 @@ const downloadImage = require('../utils/utils');
 
 const getOnePost = async (req, res) => {
   const converter = new showdown.Converter();
+  const { postId } = req.params;
   let path;
   let response;
   let html;
   try {
-    response = await axios.get('/posts/5f7a421e267897003820bb85', {
+    response = await axios.get(`/posts/${postId}`, {
       proxy: {
-        host: 'blend_cms_dev',
+        host: 'blend_cms',
         port: 1337,
       },
     });
@@ -23,7 +24,7 @@ const getOnePost = async (req, res) => {
     fs.access(path, fs.F_OK, async (err) => {
       if (err) {
         console.log('NO FILE FOUNDED');
-        await downloadImage(response.data.cover.url, response.data.cover.name);
+        await downloadImage(response.data.cover.url, response.data.cover.name, 'cover');
       }
     });
 
@@ -41,7 +42,11 @@ const getOnePost = async (req, res) => {
     return res.send(error);
   }
   return res.render('pages/post', {
-    title: 'Titulo del Post', id: req.params.postId, data: html, cover: `/images/cover/${response.data.cover.name}`,
+    title: response.data.title,
+    id: req.params.postId,
+    data: html,
+    color: response.data.category.color,
+    cover: `/images/cover/${response.data.cover.name}`,
   });
 };
 
