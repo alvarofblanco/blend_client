@@ -30,6 +30,11 @@ body {
   text-align: left !important;
 }
 
+.logo {
+  width: 250px;
+  height: 110px;
+}
+
 .imagen{
   object-fit: cover !important;
   height: 75vh;
@@ -42,6 +47,8 @@ nav {
   margin-left: 2em;
   margin: 0 !important;
 }
+
+
 .post {
   position: relative;
 }
