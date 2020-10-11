@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
+const helmet = require('helmet');
 const debug = require('debug')('app:server');
 const categoryRouter = require('./src/routes/category');
 
@@ -13,6 +14,7 @@ const app = express();
 
 // Logger
 app.use(morgan('tiny'));
+app.use(helmet());
 
 // Set the static files directory
 app.use(express.static('public'));
