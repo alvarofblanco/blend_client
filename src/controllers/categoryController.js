@@ -24,6 +24,8 @@ const getPostMusica = async (req, res) => {
       },
     });
 
+    console.log('response:', JSON.stringify(response.data));
+
     // look for the picture in the server
     for (let i = 0; i < response.data.length; i++) {
       // builds the path of the images public/images/card/[images_name]
