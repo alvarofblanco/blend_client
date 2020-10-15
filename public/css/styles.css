@@ -79,6 +79,7 @@ div .col-md-6{
   bottom: 10px;
   left: 10px;
   font-family: 'Montserrat';
+  text-align: left;
 }
 
 .card-body {
