@@ -39,13 +39,13 @@ const getOnePost = async (req, res) => {
 
     for (let i = 0; i < response.data.text_image.length; i++) {
       // builds the path of the images public/images/upload/[images_name]
-      path = Path.resolve(require.main.path, 'public', 'images', 'uploads', response.data.text_image[i].text_image[0].hash);
+      path = Path.resolve(require.main.path, 'public', 'images', 'uploads', response.data.text_image[i].text_image.hash);
       debug(`path: ${path}`);
 
       fs.access(path, fs.F_OK, async (err) => {
         if (err) {
           // download the image if not founded in the server
-          await downloadImage(response.data.text_image[i].text_image[0].formats.medium.url, response.data.text_image[i].text_image[0].hash + response.data.text_image[i].text_image[0].ext, 'uploads');
+          await downloadImage(response.data.text_image[i].text_image[0].formats.medium.url, response.data.text_image[i].text_image.hash + response.data.text_image[i].text_image.ext, 'uploads');
         }
       });
     }
