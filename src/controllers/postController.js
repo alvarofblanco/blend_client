@@ -45,7 +45,7 @@ const getOnePost = async (req, res) => {
       fs.access(path, fs.F_OK, async (err) => {
         if (err) {
           // download the image if not founded in the server
-          await downloadImage(response.data.text_image[i].text_image[0].formats.medium.url, response.data.text_image[i].text_image.hash + response.data.text_image[i].text_image.ext, 'uploads');
+          await downloadImage(response.data.text_image[i].text_image.formats.medium.url, response.data.text_image[i].text_image.hash + response.data.text_image[i].text_image.ext, 'uploads');
         }
       });
     }
