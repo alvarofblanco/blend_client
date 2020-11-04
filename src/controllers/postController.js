@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
 const axios = require('axios');
 const fs = require('fs');
 const Path = require('path');
@@ -11,6 +13,7 @@ const getOnePost = async (req, res) => {
   let path;
   let response;
   let html;
+
   try {
     response = await axios.get(`/posts/${postId}`, {
       proxy: {
@@ -19,6 +22,7 @@ const getOnePost = async (req, res) => {
       },
     });
 
+    // Download cover image
     path = Path.resolve(require.main.path, 'public', 'images', 'cover', response.data.cover.name);
 
     fs.access(path, fs.F_OK, async (err) => {
@@ -29,9 +33,22 @@ const getOnePost = async (req, res) => {
     });
 
     // content
-    debug(`response: ${JSON.stringify(response.data)}`);
+    debug(`response: ${JSON.stringify(response.data.text_image.length)}`);
     html = converter.makeHtml(response.data.body);
-    debug(`html: ${html}`);
+    // debug(`html: ${html}`);
+
+    for (let i = 0; i < response.data.text_image.length; i++) {
+      // builds the path of the images public/images/upload/[images_name]
+      path = Path.resolve(require.main.path, 'public', 'images', 'uploads', response.data.text_image[i].text_image[0].hash);
+      debug(`path: ${path}`);
+
+      fs.access(path, fs.F_OK, async (err) => {
+        if (err) {
+          // download the image if not founded in the server
+          await downloadImage(response.data.text_image[i].text_image[0].formats.medium.url, response.data.text_image[i].text_image[0].hash + response.data.text_image[i].text_image[0].ext, 'uploads');
+        }
+      });
+    }
 
     // cover
     const { cover } = response.data;

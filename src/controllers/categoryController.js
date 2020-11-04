@@ -21,10 +21,9 @@ const getPostMusica = async (req, res) => {
       },
       params: {
         category: config.category.musica,
+        active: true,
       },
     });
-
-    console.log('response:', JSON.stringify(response.data));
 
     // look for the picture in the server
     for (let i = 0; i < response.data.length; i++) {
@@ -45,7 +44,6 @@ const getPostMusica = async (req, res) => {
     console.error(error);
     return res.redirect('/');
   }
-  console.table(cover);
   return res.render('pages/category', { title: 'musica', data: response.data, cover });
 };
 
@@ -62,6 +60,7 @@ const getPostCine = async (req, res) => {
       },
       params: {
         category: config.category.cine,
+        active: true,
       },
     });
 
@@ -84,7 +83,6 @@ const getPostCine = async (req, res) => {
     console.error(error);
     return res.redirect('/');
   }
-  console.table(cover);
   return res.render('pages/category', { title: 'cine&series', data: response.data, cover });
 };
 
@@ -101,6 +99,7 @@ const getPostGastronomia = async (req, res) => {
       },
       params: {
         category: config.category.gastronomia,
+        active: true,
       },
     });
 
@@ -123,7 +122,6 @@ const getPostGastronomia = async (req, res) => {
     console.error(error);
     return res.redirect('/');
   }
-  console.table(cover);
   return res.render('pages/category', { title: 'cine&series', data: response.data, cover });
 };
 
@@ -140,6 +138,7 @@ const getPostCultura = async (req, res) => {
       },
       params: {
         category: config.category.cultura,
+        active: true,
       },
     });
 
@@ -162,7 +161,6 @@ const getPostCultura = async (req, res) => {
     console.error(error);
     return res.redirect('/');
   }
-  console.table(cover);
   return res.render('pages/category', { title: 'cine&series', data: response.data, cover });
 };
 
