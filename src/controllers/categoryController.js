@@ -3,8 +3,8 @@ require('dotenv').config();
 const axios = require('axios');
 const Path = require('path');
 const fs = require('fs');
+const debug = require('debug')('app:categoryController');
 const downloadImage = require('../utils/utils');
-const { debug } = require('console');
 
 const env = process.env.NODE_ENV;
 const config = require('../../config/config')[env];
