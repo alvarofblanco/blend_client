@@ -4,6 +4,7 @@ const axios = require('axios');
 const Path = require('path');
 const fs = require('fs');
 const downloadImage = require('../utils/utils');
+const { debug } = require('console');
 
 const env = process.env.NODE_ENV;
 const config = require('../../config/config')[env];
@@ -24,6 +25,8 @@ const getPostMusica = async (req, res) => {
         active: true,
       },
     });
+
+    debug(`response: ${JSON.stringify(response.data)}`);
 
     // look for the picture in the server
     for (let i = 0; i < response.data.length; i++) {
