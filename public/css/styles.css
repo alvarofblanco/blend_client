@@ -9,7 +9,7 @@
   font-family: 'HelveticaNeue';
   src: url('HelveticaNeue.ttc');
   font-style: normal;
-  font-weight: 700;
+  font-weight: normal;
 }
 @font-face {
   font-family: 'HelveticaCondensedBold';
@@ -99,6 +99,23 @@ div .col-md-6{
   object-fit: cover;
 }
 
+.copete {
+  /* font-size: 20pt; */
+  font-family: "HelveticaNeue";
+}
+
+.autora {
+  font-family: "HelveticaNeue";
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.hashtag {
+  font-family: "HelveticaNeue";
+  font-style: italic;
+  
+}
+
 .post-title {
   position: absolute;
   bottom: 0.5em;
@@ -108,16 +125,10 @@ div .col-md-6{
   color: "#b98051";
 }
 .post-body {
-  position: absolute;
-  padding-left: 2.5%;
-  margin-right: 500px;
-  bottom: 0px;
   font-family: 'HelveticaNeue';
 }
-
 .carousel-inner h1 {
   font-family: 'Montserrat';
-
 }
 .titleInMiddle {
   font-style: italic;
@@ -129,11 +140,9 @@ div .col-md-6{
 .navbar-light .navbar-toggler{
   border-color: white !important;
 }
-
 .nav-item:hover {
   text-decoration: underline;
 }
-
 @media all and (min-width: 992px) {
   .navbar .has-megamenu {
     position: static !important;
