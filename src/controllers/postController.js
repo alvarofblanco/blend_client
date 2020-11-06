@@ -61,6 +61,10 @@ const getOnePost = async (req, res) => {
   return res.render('pages/post', {
     title: response.data.title,
     id: req.params.postId,
+    copete: response.data.copete,
+    autora: response.data.user.displayName,
+    handle: response.data.user.ig_handle,
+    hashtags: response.data.hashtags,
     data: html,
     color: response.data.category.color,
     cover: `/images/cover/${response.data.cover.name}`,
