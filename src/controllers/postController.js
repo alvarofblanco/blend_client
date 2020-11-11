@@ -59,6 +59,7 @@ const getOnePost = async (req, res) => {
     console.error(error);
     return res.send(error);
   }
+  const date = new Date(response.data.createdAt);
   return res.render('pages/post', {
     title: response.data.title,
     id: req.params.postId,
@@ -66,6 +67,7 @@ const getOnePost = async (req, res) => {
     autora: response.data.user.displayName,
     handle: response.data.user.ig_handle,
     hashtags: response.data.hashtags,
+    date: date.toLocaleDateString('en-es'),
     data: html,
     color: response.data.category.color,
     cover: `/images/cover/${response.data.cover.name}`,
