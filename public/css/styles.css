@@ -100,23 +100,6 @@ div .col-md-6{
   object-fit: cover;
 }
 
-.copete {
-  /* font-size: 20pt; */
-  font-family: "HelveticaNeue";
-}
-
-.autora {
-  font-family: "HelveticaNeue";
-  font-weight: bold;
-  margin-bottom: 0px;
-}
-
-.hashtag {
-  font-family: "HelveticaNeue";
-  font-style: italic;
-  
-}
-
 .post-title {
   position: absolute;
   bottom: 0.5em;
@@ -167,3 +150,18 @@ div .col-md-6{
 
 }
 
+.copete {
+  font-size: 20pt;
+  font-family: "HelveticaNeue";
+}
+
+.autora {
+  font-family: "HelveticaNeue";
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.hashtag {
+  font-family: "HelveticaNeue";
+  font-style: italic;
+}

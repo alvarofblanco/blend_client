@@ -26,25 +26,21 @@
   <%- include('../partials/nav') %>
   <!--Contenido-->
   <main class="main">
-    <img src="<%= cover %>" alt="Lerem">
+    <div class="cover">
+      <img class="img-cover" src="<%= cover %>" alt="Lerem">
+      <div class="bottom-left">
+        <h2 class="title"><%= title %></h2>
+          <p class="copete"><%= copete %></p>
+          <div class="autora">
+            <p class="autora"><%= autora %></p>
+            <p><%= handle %></p>
+          </div>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">
-        <div class="mb-3">
-          <!-- <div class="contenedor">
-            <img class="card-img-top" src="<%= cover %>" alt="Lorem" style="margin: auto;">
-            <div class="texto-encima">
-              <h2 style="color: <%= color %>;"><%= title %></h2>
-              <p class="copete"><%= copete %></p>
-              <div class="autora">
-                <p class="autora"><%= autora %></p>
-                <p>@camicoscia</p>
-              </div>
-              
-              <p class="hashtag"><%= hashtags %></p>
-            </div>
-          </div> -->
-        </div>
         <div class="p-4 post-body">
           <%- data %>
         </div>
