@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
 // TODO add error login
