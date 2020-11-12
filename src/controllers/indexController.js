@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable object-shorthand */
 /* eslint-disable no-plusplus */
 const axios = require('axios');
@@ -78,6 +79,7 @@ const getIndex = async (req, res) => {
     });
 
     debug(`cine: ${JSON.stringify(responseCine.data)}`);
+    carrouselItem.id = responseCine.data[0]._id;
     carrouselItem.cover = `images/cover/${responseCine.data[0].cover.name}`;
     carrouselItem.title = responseCine.data[0].title;
     carrouselItem.copete = responseCine.data[0].copete;
@@ -90,6 +92,7 @@ const getIndex = async (req, res) => {
     carrouselItem = {};
 
     debug(`gastronomia: ${JSON.stringify(responseGastronomia.data)}`);
+    carrouselItem.id = responseGastronomia.data[0]._id;
     carrouselItem.cover = `images/cover/${responseGastronomia.data[0].cover.name}`;
     carrouselItem.title = responseGastronomia.data[0].title;
     carrouselItem.copete = responseGastronomia.data[0].copete;
@@ -102,6 +105,7 @@ const getIndex = async (req, res) => {
     carrouselItem = {};
 
     debug(`cultura: ${JSON.stringify(responseCultura.data)}`);
+    carrouselItem.id = responseCultura.data[0]._id;
     carrouselItem.cover = `/images/cover/${responseCultura.data[0].cover.name}`;
     carrouselItem.title = responseCultura.data[0].title;
     carrouselItem.copete = responseCultura.data[0].copete;
@@ -114,6 +118,7 @@ const getIndex = async (req, res) => {
     carrouselItem = {};
 
     debug(`musica: ${JSON.stringify(responseMusica.data)}`);
+    carrouselItem.id = responseMusica.data[0]._id;
     carrouselItem.cover = `/images/cover/${responseMusica.data[0].cover.name}`;
     carrouselItem.title = responseMusica.data[0].title;
     carrouselItem.copete = responseMusica.data[0].copete;
