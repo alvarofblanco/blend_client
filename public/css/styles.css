@@ -82,6 +82,19 @@ div .col-md-6{
   text-align: left;
 }
 
+.category-tag {
+  position: absolute;
+  font-family: 'HelveticaCondensedBold';
+  padding-left: 25pt;
+  padding-right: 25pt;
+  padding-top: 5pt;
+  top: 3vh;
+  text-align: left;
+  font-size: 16pt;
+  text-decoration: none;
+  color: white;
+}
+
 .card-body {
   padding: 10px;
   font-family:'HelveticaCondensedBold';
