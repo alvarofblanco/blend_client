@@ -55,6 +55,8 @@ nav {
 .row {
   width: 100%;
   margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
 }
 div .col-md-6{
   padding-left: 0 !important;
@@ -87,12 +89,13 @@ div .col-md-6{
   font-family: 'HelveticaCondensedBold';
   padding-left: 25pt;
   padding-right: 25pt;
-  padding-top: 5pt;
-  top: 3vh;
+  padding-top: 10pt;
+  top: 0vh;
   text-align: left;
   font-size: 16pt;
   text-decoration: none;
   color: white;
+  margin-top: 0px;
 }
 
 .card-body {
@@ -178,4 +181,8 @@ div .col-md-6{
 .hashtag {
   font-family: "HelveticaNeue";
   font-style: italic;
+}
+
+.navbar {
+  padding: 0px;
 }
