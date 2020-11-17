@@ -36,7 +36,7 @@ const getPostMusica = async (req, res) => {
       fs.access(path, fs.F_OK, async (err) => {
         if (err) {
           // download the image if not founded in the server
-          await downloadImage(response.data[i].cover.formats.medium.url, response.data[i].cover.name, 'card');
+          await downloadImage(response.data[i].cover.formats.medium.url, response.data[i].cover.name, 'images/card');
         }
       });
 
@@ -75,7 +75,7 @@ const getPostCine = async (req, res) => {
       fs.access(path, fs.F_OK, async (err) => {
         if (err) {
           // download the image if not founded in the server
-          await downloadImage(response.data[i].cover.formats.medium.url, response.data[i].cover.name, 'card');
+          await downloadImage(response.data[i].cover.formats.medium.url, response.data[i].cover.name, 'images/card');
         }
       });
 
@@ -114,7 +114,7 @@ const getPostGastronomia = async (req, res) => {
       fs.access(path, fs.F_OK, async (err) => {
         if (err) {
           // download the image if not founded in the server
-          await downloadImage(response.data[i].cover.formats.medium.url, response.data[i].cover.name, 'card');
+          await downloadImage(response.data[i].cover.formats.medium.url, response.data[i].cover.name, 'images/card');
         }
       });
 
@@ -153,7 +153,7 @@ const getPostCultura = async (req, res) => {
       fs.access(path, fs.F_OK, async (err) => {
         if (err) {
           // download the image if not founded in the server
-          await downloadImage(response.data[i].cover.formats.medium.url, response.data[i].cover.name, 'card');
+          await downloadImage(response.data[i].cover.formats.medium.url, response.data[i].cover.name, 'images/card');
         }
       });
 

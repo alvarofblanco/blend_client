@@ -1,5 +1,5 @@
 node_modules
 .env
 public/images/card/*
-public/images/uploads/*
+public/uploads/*
 public/images/cover/*

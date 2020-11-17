@@ -110,6 +110,8 @@ div .col-md-6{
 }
 .post-body {
   font-family: 'HelveticaNeue';
+  text-align: justify;
+  text-justify: inter-word;
 }
 .carousel-inner h1 {
   font-family: 'Montserrat';

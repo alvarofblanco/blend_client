@@ -30,18 +30,18 @@ const getOnePost = async (req, res) => {
     fs.access(path, fs.F_OK, async (err) => {
       if (err) {
         console.log('NO FILE FOUNDED');
-        await downloadImage(response.data.cover.url, response.data.cover.name, 'cover');
+        await downloadImage(response.data.cover.url, response.data.cover.name, 'images/cover');
       }
     });
 
     // content
     debug(`response: ${JSON.stringify(response.data.text_image.length)}`);
     html = converter.makeHtml(response.data.body);
-    // debug(`html: ${html}`);
 
+    // download text images
     for (let i = 0; i < response.data.text_image.length; i++) {
-      // builds the path of the images public/images/upload/[images_name]
-      path = Path.resolve(require.main.path, 'public', 'images', 'uploads', response.data.text_image[i].text_image.hash);
+      // builds the path of the images public/uploads/[images_name]
+      path = Path.resolve(require.main.path, 'public', 'uploads', response.data.text_image[i].text_image.hash);
       debug(`path: ${path}`);
 
       fs.access(path, fs.F_OK, async (err) => {

@@ -8,7 +8,7 @@ const axios = require('axios');
  * @param {String} imageName
  */
 const downloadImage = async (url, imageName, type) => {
-  const path = Path.resolve(require.main.path, 'public', 'images', type, imageName);
+  const path = Path.resolve(require.main.path, 'public', type, imageName);
   const writter = fs.createWriteStream(path);
 
   const response = await axios.get(url, {
