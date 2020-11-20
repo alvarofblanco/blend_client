@@ -9,12 +9,15 @@ const debug = require('debug')('app:postController');
 const showdown = require('showdown');
 const downloadImage = require('../utils/utils');
 
+const createLlamada = (text, color) => `<p style="color: ${color};" class="llamada">${text}</p>`;
+
 const getOnePost = async (req, res) => {
   const converter = new showdown.Converter();
   const { postId } = req.params;
   let path;
   let response;
-  let html;
+  let html = '';
+  let richText;
 
   try {
     response = await axios.get(`/posts/${postId}`, {
@@ -35,8 +38,21 @@ const getOnePost = async (req, res) => {
     });
 
     // content
-    debug(`response: ${JSON.stringify(response.data.text_image.length)}`);
-    html = converter.makeHtml(response.data.body);
+    // debug(`response: ${JSON.stringify(response.data)}`);
+    // html = converter.makeHtml(response.data.body);
+    richText = response.data.richText;
+    // debug(`html: ${JSON.stringify(richText)}`);
+    // loop through richText array
+    for (let i = 0; i < richText.length; i++) {
+      if (richText[i].texto !== undefined) {
+        html += converter.makeHtml(richText[i].texto);
+      }
+      if (richText[i].llamada !== undefined) {
+        html += createLlamada(richText[i].llamada, response.data.category.color);
+      }
+    }
+
+    debug(`html: ${html}`);
 
     // download text images
     for (let i = 0; i < response.data.text_image.length; i++) {

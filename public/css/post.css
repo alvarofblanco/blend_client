@@ -43,5 +43,12 @@ img {
 }
 
 .title {
-    font-size: 60pt;
+    font-size: 5em;
+}
+
+.llamada {
+    font-size: 2em;
+    font-weight: bolder;
+    font-family: 'Montserrat';
+    text-align: center;
 }
