@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/post.css">
+  <!-- Font awesome -->
+  <link href="/fontawesome-free-5.14.0-web/css/fontawesome.css" rel="stylesheet">
+  <link href="/fontawesome-free-5.14.0-web/css/brands.css" rel="stylesheet">
+  <link href="/fontawesome-free-5.14.0-web/css/solid.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <title><%=title%></title>
+</head>
+
+<body>
+  <%- include('../partials/nav') %>
+  <!--Contenido-->
+  <main class="main">
+    <div class="cover">
+      <img class="img-cover" src="<%= cover %>" alt="Lerem">
+      <div class="bottom-left">
+        <h2 class="title"><%= title %></h2>
+          <p class="copete"><%= copete %></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="p-4 post-body">
+          <%- data %>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </main>
+  <!--Footer-->
+  <%-include('../partials/footer')%>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="/js/jquery-3.5.1.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
