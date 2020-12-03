@@ -61,7 +61,7 @@
           </div>
         </div> -->
         <div class="carousel-item active">
-          <a href="/post/<%= data[0].id %>">
+          <a href="/post/<%= data[0].title_id %>">
             <img src="<%= data[0].cover %>" alt="" class="img-responsive w-100 imagen">
             <div class="carousel-caption d-none d-md-block">
               <h1 class="display-5 text-white"><%= data[0].title%></h1>
@@ -73,7 +73,7 @@
         </div> 
         <% for(let i = 1; i < 4; i++) { %> 
           <div class="carousel-item">
-            <a href="/post/<%= data[i].id %>">
+            <a href="/post/<%= data[i].title_id %>">
               <img src="<%= data[i].cover %>" alt="" class="img-responsive w-100 imagen">
               <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-5 text-white"><%= data[i].title%></h1>

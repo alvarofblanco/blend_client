@@ -32,7 +32,7 @@
         <% for(let i = 0; i < data.length; i++) { %>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card">
-            <a href="/post/<%= data[i].id %>">
+            <a href="/post/<%= data[i].title_id %>">
               <img class="card-img-top" src="<%= cover[i] %>" alt="Lorem">
               <div style="background-color: <%= data[i].category.color %>;" class="category-tag">
                 <h4><%= data[i].category.displayName %> </h4>

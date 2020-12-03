@@ -13,34 +13,41 @@ const createLlamada = (text, color) => `<p style="color: ${color};" class="llama
 
 const getOnePost = async (req, res) => {
   const converter = new showdown.Converter();
-  const { postId } = req.params;
+  const { postTitleId } = req.params;
   let path;
   let response;
   let html = '';
   let richText;
+  let post;
 
   try {
-    response = await axios.get(`/posts/${postId}`, {
+    response = await axios.get('/posts', {
       proxy: {
         host: 'blend_cms',
         port: 1337,
       },
+      params: {
+        title_id: postTitleId,
+      },
     });
 
+    [post] = response.data;
+
+    debug(`response: ${JSON.stringify(post)}`);
     // Download cover image
-    path = Path.resolve(require.main.path, 'public', 'images', 'cover', response.data.cover.name);
+    path = Path.resolve(require.main.path, 'public', 'images', 'cover', post.cover.name);
 
     fs.access(path, fs.F_OK, async (err) => {
       if (err) {
         console.log('NO FILE FOUNDED');
-        await downloadImage(response.data.cover.url, response.data.cover.name, 'images/cover');
+        await downloadImage(post.cover.url, post.cover.name, 'images/cover');
       }
     });
 
     // content
-    // debug(`response: ${JSON.stringify(response.data)}`);
-    // html = converter.makeHtml(response.data.body);
-    richText = response.data.richText;
+    // debug(`response: ${JSON.stringify(post)}`);
+    // html = converter.makeHtml(post.body);
+    richText = post.richText;
     // debug(`html: ${JSON.stringify(richText)}`);
     // loop through richText array
     for (let i = 0; i < richText.length; i++) {
@@ -48,46 +55,46 @@ const getOnePost = async (req, res) => {
         html += converter.makeHtml(richText[i].texto);
       }
       if (richText[i].llamada !== undefined) {
-        html += createLlamada(richText[i].llamada, response.data.category.color);
+        html += createLlamada(richText[i].llamada, post.category.color);
       }
     }
 
     debug(`html: ${html}`);
 
     // download text images
-    for (let i = 0; i < response.data.text_image.length; i++) {
+    for (let i = 0; i < post.text_image.length; i++) {
       // builds the path of the images public/uploads/[images_name]
-      path = Path.resolve(require.main.path, 'public', 'uploads', response.data.text_image[i].text_image.hash);
+      path = Path.resolve(require.main.path, 'public', 'uploads', post.text_image[i].text_image.hash);
       debug(`path: ${path}`);
 
       fs.access(path, fs.F_OK, async (err) => {
         if (err) {
           // download the image if not founded in the server
-          await downloadImage(response.data.text_image[i].text_image.formats.medium.url, response.data.text_image[i].text_image.hash + response.data.text_image[i].text_image.ext, 'uploads');
+          await downloadImage(post.text_image[i].text_image.formats.medium.url, post.text_image[i].text_image.hash + post.text_image[i].text_image.ext, 'uploads');
         }
       });
     }
 
     // cover
-    const { cover } = response.data;
+    const { cover } = post;
     debug(`url: ${cover.url}`);
     // TODO download image
   } catch (error) {
     console.error(error);
     return res.send(error);
   }
-  const date = new Date(response.data.createdAt);
+  const date = new Date(post.createdAt);
   return res.render('pages/post', {
-    title: response.data.title,
+    title: post.title,
     id: req.params.postId,
-    copete: response.data.copete,
-    autora: response.data.user.displayName,
-    handle: response.data.user.ig_handle,
-    hashtags: response.data.hashtags,
+    copete: post.copete,
+    autora: post.user.displayName,
+    handle: post.user.ig_handle,
+    hashtags: post.hashtags,
     date: date.toLocaleDateString('en-es'),
     data: html,
-    color: response.data.category.color,
-    cover: `/images/cover/${response.data.cover.name}`,
+    color: post.category.color,
+    cover: `/images/cover/${post.cover.name}`,
   });
 };
 
