@@ -15,7 +15,7 @@ const config = require('../../config/config')[env];
 
 const createLlamada = (text, color) => `<p style="color: ${color};" class="llamada">${text}</p>`;
 
-const getIndex = async (req, res) => {
+const getIndex = async (req, res, next) => {
   let responseCine;
   let responseGastronomia;
   let responseCultura;
@@ -84,6 +84,24 @@ const getIndex = async (req, res) => {
       },
     });
 
+    // console.log('responseCine: ', JSON.stringify(responseCine.data));
+    // console.log('responseGastronomia: ', JSON.stringify(responseGastronomia.data));
+    // console.log('responseCultura: ', JSON.stringify(responseCultura.data));
+    // console.log('responseMusica: ', JSON.stringify(responseMusica.data));
+
+    if (
+      responseCine.data.length === 0
+      || responseMusica.data.length === 0
+      || responseCultura.data.length === 0
+      || responseGastronomia.data.length === 0
+    ) {
+      const error = new Error('500');
+      error.status = 500;
+      return next(error);
+    }
+
+    // CINE
+
     carrouselItem.id = responseCine.data[0]._id;
     carrouselItem.cover = `images/cover/${responseCine.data[0].cover.name}`;
     carrouselItem.title = responseCine.data[0].title;
@@ -96,6 +114,8 @@ const getIndex = async (req, res) => {
 
     carrouselArr.push(carrouselItem);
     carrouselItem = {};
+
+    // GASTRONOMIA
 
     carrouselItem.id = responseGastronomia.data[0]._id;
     carrouselItem.cover = `images/cover/${responseGastronomia.data[0].cover.name}`;
@@ -110,6 +130,8 @@ const getIndex = async (req, res) => {
     carrouselArr.push(carrouselItem);
     carrouselItem = {};
 
+    // CULTURA
+
     carrouselItem.id = responseCultura.data[0]._id;
     carrouselItem.cover = `/images/cover/${responseCultura.data[0].cover.name}`;
     carrouselItem.title = responseCultura.data[0].title;
@@ -122,6 +144,8 @@ const getIndex = async (req, res) => {
 
     carrouselArr.push(carrouselItem);
     carrouselItem = {};
+
+    // MUSICA
 
     carrouselItem.id = responseMusica.data[0]._id;
     carrouselItem.cover = `/images/cover/${responseMusica.data[0].cover.name}`;
@@ -137,11 +161,10 @@ const getIndex = async (req, res) => {
     carrouselItem = {};
 
     debug(`carrousel: ${JSON.stringify(carrouselArr)}`);
-
-    res.render('pages/index', { title: 'Blend Blog', data: carrouselArr });
   } catch (error) {
-    res.json({ error: error.toString() });
+    return res.json({ error: error.toString() });
   }
+  return res.render('pages/index', { title: 'Blend Blog', data: carrouselArr });
 };
 
 // const getAbout = async (req, res) => res.render('pages/about', { title: 'Blend Blog' });
@@ -163,14 +186,14 @@ const getAbout = async (req, res) => {
     });
     [about] = response.data;
 
-    console.log('about:', JSON.stringify(about));
+    // console.log('about:', JSON.stringify(about));
 
     // Download cover image
     path = Path.resolve(require.main.path, 'public', 'images', 'cover', about.cover.name);
 
     fs.access(path, fs.F_OK, async (err) => {
       if (err) {
-        console.log('NO FILE FOUNDED');
+        // console.log('NO FILE FOUNDED');
         await downloadImage(about.cover.url, about.cover.name, 'images/cover');
       }
     });
@@ -211,7 +234,7 @@ const getAbout = async (req, res) => {
     debug(`url: ${cover.url}`);
     // TODO download image
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return res.send(error);
   }
   const date = new Date(about.createdAt);

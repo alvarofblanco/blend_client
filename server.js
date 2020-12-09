@@ -3,10 +3,12 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const debug = require('debug')('app:server');
-const categoryRouter = require('./src/routes/category');
 
+const categoryRouter = require('./src/routes/category');
 const indexRouter = require('./src/routes/indexRouter');
 const postRouter = require('./src/routes/postRouter');
+
+const errorHandler = require('./src/utils/errorHandler');
 
 const PORT = process.env.PORT || 3333;
 
@@ -28,6 +30,16 @@ app.set('view engine', 'ejs');
 app.use('/', indexRouter);
 app.use('/post', postRouter);
 app.use('/category', categoryRouter);
+
+// 404 error
+app.use((req, res, next) => {
+  const error = new Error('Not Found');
+  error.status = 404;
+  next(error);
+});
+
+// global error handler
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   debug(`Listening on port ${PORT}`);

@@ -11,7 +11,7 @@ const downloadImage = require('../utils/utils');
 
 const createLlamada = (text, color) => `<p style="color: ${color};" class="llamada">${text}</p>`;
 
-const getOnePost = async (req, res) => {
+const getOnePost = async (req, res, next) => {
   const converter = new showdown.Converter();
   const { postTitleId } = req.params;
   let path;
@@ -31,6 +31,13 @@ const getOnePost = async (req, res) => {
       },
     });
 
+    // if post not found
+    // console.log('response: ', JSON.stringify(response.data));
+    if (response.data.length === 0) {
+      const error = new Error('Not Found');
+      error.status = 404;
+      return next(error);
+    }
     [post] = response.data;
 
     debug(`response: ${JSON.stringify(post)}`);

@@ -186,3 +186,12 @@ div .col-md-6{
 .navbar {
   padding: 0px;
 }
+
+.error {
+  padding-bottom: 150px;
+  text-align: center;
+}
+
+.error-title {
+  font-size: 300px;
+}
