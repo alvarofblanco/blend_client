@@ -22,6 +22,7 @@ const getIndex = async (req, res, next) => {
   let responseMusica;
   const carrouselArr = [];
   let carrouselItem = {};
+  let fecha;
 
   try {
     // const response = await axios('/posts', {
@@ -89,80 +90,80 @@ const getIndex = async (req, res, next) => {
     // console.log('responseCultura: ', JSON.stringify(responseCultura.data));
     // console.log('responseMusica: ', JSON.stringify(responseMusica.data));
 
-    if (
-      responseCine.data.length === 0
-      || responseMusica.data.length === 0
-      || responseCultura.data.length === 0
-      || responseGastronomia.data.length === 0
-    ) {
-      const error = new Error('500');
-      error.status = 500;
-      return next(error);
-    }
-
     // CINE
 
-    carrouselItem.id = responseCine.data[0]._id;
-    carrouselItem.cover = `images/cover/${responseCine.data[0].cover.name}`;
-    carrouselItem.title = responseCine.data[0].title;
-    carrouselItem.copete = responseCine.data[0].copete;
-    carrouselItem.autora = responseCine.data[0].user.displayName;
-    carrouselItem.handle = responseCine.data[0].user.ig_handle;
-    carrouselItem.title_id = responseCine.data[0].title_id;
-    let fecha = new Date(responseCine.data[0].createdAt);
-    carrouselItem.fecha = fecha.toLocaleDateString('es-py');
+    if (responseCine.data.length !== 0) {
+      carrouselItem.id = responseCine.data[0]._id;
+      carrouselItem.cover = `images/cover/${responseCine.data[0].cover.name}`;
+      carrouselItem.title = responseCine.data[0].title;
+      carrouselItem.copete = responseCine.data[0].copete;
+      carrouselItem.autora = responseCine.data[0].user.displayName;
+      carrouselItem.handle = responseCine.data[0].user.ig_handle;
+      carrouselItem.title_id = responseCine.data[0].title_id;
+      fecha = new Date(responseCine.data[0].createdAt);
+      carrouselItem.fecha = fecha.toLocaleDateString('es-py');
 
-    carrouselArr.push(carrouselItem);
-    carrouselItem = {};
+      // push the items in the array
+      carrouselArr.push(carrouselItem);
+      carrouselItem = {};
+    }
 
     // GASTRONOMIA
 
-    carrouselItem.id = responseGastronomia.data[0]._id;
-    carrouselItem.cover = `images/cover/${responseGastronomia.data[0].cover.name}`;
-    carrouselItem.title = responseGastronomia.data[0].title;
-    carrouselItem.copete = responseGastronomia.data[0].copete;
-    carrouselItem.autora = responseGastronomia.data[0].user.displayName;
-    carrouselItem.handle = responseGastronomia.data[0].user.ig_handle;
-    carrouselItem.title_id = responseGastronomia.data[0].title_id;
-    fecha = new Date(responseGastronomia.data[0].createdAt);
-    carrouselItem.fecha = fecha.toLocaleDateString('es-py');
+    if (responseGastronomia.data.length !== 0) {
+      carrouselItem.id = responseGastronomia.data[0]._id;
+      carrouselItem.cover = `images/cover/${responseGastronomia.data[0].cover.name}`;
+      carrouselItem.title = responseGastronomia.data[0].title;
+      carrouselItem.copete = responseGastronomia.data[0].copete;
+      carrouselItem.autora = responseGastronomia.data[0].user.displayName;
+      carrouselItem.handle = responseGastronomia.data[0].user.ig_handle;
+      carrouselItem.title_id = responseGastronomia.data[0].title_id;
+      fecha = new Date(responseGastronomia.data[0].createdAt);
+      carrouselItem.fecha = fecha.toLocaleDateString('es-py');
 
-    carrouselArr.push(carrouselItem);
-    carrouselItem = {};
+      carrouselArr.push(carrouselItem);
+      carrouselItem = {};
+    }
 
     // CULTURA
 
-    carrouselItem.id = responseCultura.data[0]._id;
-    carrouselItem.cover = `/images/cover/${responseCultura.data[0].cover.name}`;
-    carrouselItem.title = responseCultura.data[0].title;
-    carrouselItem.copete = responseCultura.data[0].copete;
-    carrouselItem.autora = responseCultura.data[0].user.displayName;
-    carrouselItem.handle = responseCultura.data[0].user.ig_handle;
-    carrouselItem.title_id = responseCultura.data[0].title_id;
-    fecha = new Date(responseCultura.data[0].createdAt);
-    carrouselItem.fecha = fecha.toLocaleDateString('es-py');
+    if (responseCultura.data.length !== 0) {
+      carrouselItem.id = responseCultura.data[0]._id;
+      carrouselItem.cover = `/images/cover/${responseCultura.data[0].cover.name}`;
+      carrouselItem.title = responseCultura.data[0].title;
+      carrouselItem.copete = responseCultura.data[0].copete;
+      carrouselItem.autora = responseCultura.data[0].user.displayName;
+      carrouselItem.handle = responseCultura.data[0].user.ig_handle;
+      carrouselItem.title_id = responseCultura.data[0].title_id;
+      fecha = new Date(responseCultura.data[0].createdAt);
+      carrouselItem.fecha = fecha.toLocaleDateString('es-py');
 
-    carrouselArr.push(carrouselItem);
-    carrouselItem = {};
+      // push the item to the array
+      carrouselArr.push(carrouselItem);
+      carrouselItem = {};
+    }
 
     // MUSICA
 
-    carrouselItem.id = responseMusica.data[0]._id;
-    carrouselItem.cover = `/images/cover/${responseMusica.data[0].cover.name}`;
-    carrouselItem.title = responseMusica.data[0].title;
-    carrouselItem.copete = responseMusica.data[0].copete;
-    carrouselItem.autora = responseMusica.data[0].user.displayName;
-    carrouselItem.handle = responseMusica.data[0].user.ig_handle;
-    carrouselItem.title_id = responseMusica.data[0].title_id;
-    fecha = new Date(responseMusica.data[0].createdAt);
-    carrouselItem.fecha = fecha.toLocaleDateString('es-py');
+    if (responseMusica.data.length !== 0) {
+      carrouselItem.id = responseMusica.data[0]._id;
+      carrouselItem.cover = `/images/cover/${responseMusica.data[0].cover.name}`;
+      carrouselItem.title = responseMusica.data[0].title;
+      carrouselItem.copete = responseMusica.data[0].copete;
+      carrouselItem.autora = responseMusica.data[0].user.displayName;
+      carrouselItem.handle = responseMusica.data[0].user.ig_handle;
+      carrouselItem.title_id = responseMusica.data[0].title_id;
+      fecha = new Date(responseMusica.data[0].createdAt);
+      carrouselItem.fecha = fecha.toLocaleDateString('es-py');
 
-    carrouselArr.push(carrouselItem);
-    carrouselItem = {};
+      carrouselArr.push(carrouselItem);
+      carrouselItem = {};
+    }
 
     debug(`carrousel: ${JSON.stringify(carrouselArr)}`);
   } catch (error) {
-    return res.json({ error: error.toString() });
+    console.error(error);
+    return next(error);
   }
   return res.render('pages/index', { title: 'Blend Blog', data: carrouselArr });
 };
