@@ -40,7 +40,7 @@ const getOnePost = async (req, res, next) => {
     }
     [post] = response.data;
 
-    debug(`response: ${JSON.stringify(post)}`);
+    // debug(`response: ${JSON.stringify(post)}`);
     // Download cover image
     path = Path.resolve(require.main.path, 'public', 'images', 'cover', post.cover.name);
 
@@ -52,10 +52,8 @@ const getOnePost = async (req, res, next) => {
     });
 
     // content
-    // debug(`response: ${JSON.stringify(post)}`);
-    // html = converter.makeHtml(post.body);
     richText = post.richText;
-    // debug(`html: ${JSON.stringify(richText)}`);
+
     // loop through richText array
     for (let i = 0; i < richText.length; i++) {
       if (richText[i].texto !== undefined) {
@@ -66,7 +64,7 @@ const getOnePost = async (req, res, next) => {
       }
     }
 
-    debug(`html: ${html}`);
+    // debug(`html: ${html}`);
 
     // download text images
     for (let i = 0; i < post.text_image.length; i++) {
@@ -84,7 +82,7 @@ const getOnePost = async (req, res, next) => {
 
     // cover
     const { cover } = post;
-    debug(`url: ${cover.url}`);
+    debug(`url: ${cover.name}`);
     // TODO download image
   } catch (error) {
     console.error(error);
