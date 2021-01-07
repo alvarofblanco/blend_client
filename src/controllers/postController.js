@@ -100,6 +100,7 @@ const getOnePost = async (req, res, next) => {
     data: html,
     color: post.category.color,
     cover: `/images/cover/${post.cover.name}`,
+    coverPosition: post.cover_position.code,
   });
 };
 
