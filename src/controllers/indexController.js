@@ -85,7 +85,7 @@ const getIndex = async (req, res, next) => {
       },
     });
 
-    // console.log('responseCine: ', JSON.stringify(responseCine.data));
+    console.log('responseCine: ', JSON.stringify(responseCine.data));
     // console.log('responseGastronomia: ', JSON.stringify(responseGastronomia.data));
     // console.log('responseCultura: ', JSON.stringify(responseCultura.data));
     // console.log('responseMusica: ', JSON.stringify(responseMusica.data));
@@ -100,6 +100,7 @@ const getIndex = async (req, res, next) => {
       carrouselItem.autora = responseCine.data[0].user.displayName;
       carrouselItem.handle = responseCine.data[0].user.ig_handle;
       carrouselItem.title_id = responseCine.data[0].title_id;
+      carrouselItem.coverPosition = responseCine.data[0].cover_position.code
       fecha = new Date(responseCine.data[0].createdAt);
       carrouselItem.fecha = fecha.toLocaleDateString('es-py');
 
@@ -118,6 +119,7 @@ const getIndex = async (req, res, next) => {
       carrouselItem.autora = responseGastronomia.data[0].user.displayName;
       carrouselItem.handle = responseGastronomia.data[0].user.ig_handle;
       carrouselItem.title_id = responseGastronomia.data[0].title_id;
+      carrouselItem.coverPosition = responseGastronomia.data[0].cover_position.code;
       fecha = new Date(responseGastronomia.data[0].createdAt);
       carrouselItem.fecha = fecha.toLocaleDateString('es-py');
 
@@ -135,6 +137,7 @@ const getIndex = async (req, res, next) => {
       carrouselItem.autora = responseCultura.data[0].user.displayName;
       carrouselItem.handle = responseCultura.data[0].user.ig_handle;
       carrouselItem.title_id = responseCultura.data[0].title_id;
+      carrouselItem.coverPosition = responseCultura.data[0].cover_position.code;
       fecha = new Date(responseCultura.data[0].createdAt);
       carrouselItem.fecha = fecha.toLocaleDateString('es-py');
 
@@ -153,6 +156,7 @@ const getIndex = async (req, res, next) => {
       carrouselItem.autora = responseMusica.data[0].user.displayName;
       carrouselItem.handle = responseMusica.data[0].user.ig_handle;
       carrouselItem.title_id = responseMusica.data[0].title_id;
+      carrouselItem.coverPosition = responseMusica.data[0].cover_position.code;
       fecha = new Date(responseMusica.data[0].createdAt);
       carrouselItem.fecha = fecha.toLocaleDateString('es-py');
 
@@ -165,7 +169,7 @@ const getIndex = async (req, res, next) => {
     console.error(error);
     return next(error);
   }
-  return res.render('pages/index', { title: 'Blend Blog', data: carrouselArr });
+  return res.render('pages/index', { title: 'Cultura Blend', data: carrouselArr });
 };
 
 // const getAbout = async (req, res) => res.render('pages/about', { title: 'Blend Blog' });

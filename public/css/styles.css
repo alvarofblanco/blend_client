@@ -75,6 +75,10 @@ div .col-md-6{
   text-align: center;
   width: 100%;
 }
+
+.copete {
+  font-family: "HelveticaNeue";
+}
  
 .texto-encima{
   position: absolute;
