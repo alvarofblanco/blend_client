@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
+const serveFavicon = require('serve-favicon');
+const path = require('path');
 const debug = require('debug')('app:server');
 
 const categoryRouter = require('./src/routes/category');
@@ -13,6 +15,9 @@ const errorHandler = require('./src/utils/errorHandler');
 const PORT = process.env.PORT || 3333;
 
 const app = express();
+
+// favicon caching
+app.use(serveFavicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // Logger
 app.use(morgan('tiny'));
