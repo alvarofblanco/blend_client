@@ -92,6 +92,7 @@ const getOnePost = async (req, res, next) => {
   return res.render('pages/post', {
     title: post.title,
     id: req.params.postId,
+    title_id: post.title_id,
     copete: post.copete,
     autora: post.user.displayName,
     handle: post.user.ig_handle,
