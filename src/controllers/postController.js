@@ -97,7 +97,7 @@ const getOnePost = async (req, res, next) => {
     autora: post.user.displayName,
     handle: post.user.ig_handle,
     hashtags: post.hashtags,
-    date: date.toLocaleDateString('en-es'),
+    date: post.publication_date,
     data: html,
     color: post.category.color,
     cover: `/images/cover/${post.cover.name}`,
