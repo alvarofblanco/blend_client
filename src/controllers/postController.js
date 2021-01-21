@@ -101,6 +101,7 @@ const getOnePost = async (req, res, next) => {
     data: html,
     color: post.category.color,
     cover: `/images/cover/${post.cover.name}`,
+    thumbnail: post.cover.formats.small.url,
     coverPosition: post.cover_position.code,
   });
 };
